@@ -37,7 +37,7 @@ class DataStructure implements \JsonSerializable, \ArrayAccess, \IteratorAggrega
      * @return mixed
      */
     public function getColumn($key) {
-        return $this->getColumns()[$key];
+        return @$this->getColumns()[$key];
     }
 
     /**
