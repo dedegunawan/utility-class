@@ -193,16 +193,20 @@ class DataStructure implements \JsonSerializable, \ArrayAccess, \IteratorAggrega
 
     /**
      * @param array $keys
+     * @return DataStructure
      */
     public function filter(array $keys) {
-        $column_names = array_keys($this->getColumns());
+        $data = $this;
+        $column_names = array_keys($data->getColumns());
         foreach ($column_names as $column_name) {
-            if (!in_array($column_name, $keys) && $this->hasColumn($column_name))
-                $this->removeColumn($column_name);
+            if (!in_array($column_name, $keys) && $data->hasColumn($column_name))
+                $data->removeColumn($column_name);
         }
+        return $data;
     }
     /**
      * @param array $keys
+     * @return DataStructure
      */
     public function only(array $keys) {
         return $this->filter($keys);
@@ -210,13 +214,16 @@ class DataStructure implements \JsonSerializable, \ArrayAccess, \IteratorAggrega
 
     /**
      * @param array $keys
+     * @return DataStructure
      */
     public function except(array $keys) {
-        $column_names = array_keys($this->getColumns());
+        $data = $this;
+        $column_names = array_keys($data->getColumns());
         foreach ($column_names as $column_name) {
-            if (in_array($column_name, $keys) && $this->hasColumn($column_name))
-                $this->removeColumn($column_name);
+            if (in_array($column_name, $keys) && $data->hasColumn($column_name))
+                $data->removeColumn($column_name);
         }
+        return $data;
     }
 
     /**
