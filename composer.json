@@ -1,0 +1,18 @@
+{
+    "name": "dedegunawan/utility-class",
+    "description": "Kumpulan Library PHP untuk senang-senang",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dede Gunawan",
+            "email": "dede@unsil.ac.id"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DedeGunawan\\UtilityClass\\": "src/"
+        }
+    }
+}
