@@ -9,7 +9,9 @@
             "email": "dede@unsil.ac.id"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/support": "5.8.*"
+    },
     "autoload": {
         "psr-4": {
             "DedeGunawan\\UtilityClass\\": "src/"

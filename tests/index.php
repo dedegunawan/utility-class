@@ -10,4 +10,6 @@ require_once '../vendor/autoload.php';
 
 $data = new \DedeGunawan\UtilityClass\DataStructure([]);
 
-var_dump($data);die();
+$collection = new \DedeGunawan\UtilityClass\MyCollection(array('hallo', 'hheheh'));
+
+//var_dump($collection);die();
