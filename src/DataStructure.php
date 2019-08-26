@@ -201,6 +201,12 @@ class DataStructure implements \JsonSerializable, \ArrayAccess, \IteratorAggrega
                 $this->removeColumn($column_name);
         }
     }
+    /**
+     * @param array $keys
+     */
+    public function only(array $keys) {
+        return $this->filter($keys);
+    }
 
     /**
      * @param array $keys
