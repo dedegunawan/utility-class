@@ -196,7 +196,7 @@ class DataStructure implements \JsonSerializable, \ArrayAccess, \IteratorAggrega
      * @return DataStructure
      */
     public function filter(array $keys) {
-        $data = $this;
+        $data = clone $this;
         $column_names = array_keys($data->getColumns());
         foreach ($column_names as $column_name) {
             if (!in_array($column_name, $keys) && $data->hasColumn($column_name))
@@ -217,7 +217,7 @@ class DataStructure implements \JsonSerializable, \ArrayAccess, \IteratorAggrega
      * @return DataStructure
      */
     public function except(array $keys) {
-        $data = $this;
+        $data = clone $this;
         $column_names = array_keys($data->getColumns());
         foreach ($column_names as $column_name) {
             if (in_array($column_name, $keys) && $data->hasColumn($column_name))
