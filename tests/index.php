@@ -8,8 +8,8 @@
 
 require_once '../vendor/autoload.php';
 
-$data = new \DedeGunawan\UtilityClass\DataStructure([]);
+$data = new \DedeGunawan\UtilityClass\DataStructure(['hallo' => 'test', 'hai' => 'hai']);
 
-$collection = new \DedeGunawan\UtilityClass\MyCollection(array('hallo', 'hheheh'));
+//$collection = new \DedeGunawan\UtilityClass\MyCollection(array('hallo', 'hheheh'));
 
-//var_dump($collection);die();
+var_dump($data->except(['hallo']));die();
